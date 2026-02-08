@@ -1,0 +1,72 @@
+@model LandParcelFinder.Models.Parcel;
+
+@{
+    ViewData["Title"] = "Parcial Details";
+}
+
+<div class = "container mt-4">
+    <div class = "row">
+        <div class = "col-md-8 offset-md-2">
+            <div class = "card">
+                <div class="card-header bg-primary text-white">
+                    <h2>Parcel Details</h2>
+                </div>
+                    <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Parcel Number</dt>
+                        <dd class="col-sm-8">@Model.ParcelNumber</dd>
+
+                        <dt class="col-sm-4">Address</dt>
+                        <dd class="col-sm-8">@Model.Address</dd>
+
+                        <dt class="col-sm-4">County</dt>
+                        <dd class="col-sm-8">@Model.county</dd>
+
+                        <dt class="col-sm-4">Size</dt>
+                        <dd class="col-sm-8">@Model.SizeInAcres acres</dd>
+
+                        <dt class="col-sm-4">Price</dt>
+                        <dd class="col-sm-8">@Model.Price.ToString("C")</dd>
+
+                        <dt class="col-sm-4">Has Wetlands</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.HasWetLands)
+                            {
+                                <span class="badge bg-danger">Yes</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">No</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Status</dt>
+                        <dd class="col-sm-8">
+                             @if(Model.Status == "Available")
+                            {
+                                <span class= "badge bg-success">@Model.Status</span>
+                            }
+                            else if(Model.Status == "Pending")
+                            {
+                                <span class= "badge bg-warning text-dark">@Model.Status</span>
+                            }
+                            else
+                            {
+                                <span class= "badge bg-secondary">@Model.Status</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Notes</dt>
+                        <dd class="col-sm-8">@(Model.notes ?? "No notes")</dd>
+
+                        <dt class="col-sm-4">Created Date</dt>
+                        <dd class="col-sm-8">@Model.CreatedDate.ToString("MMM dd, yyyy")</dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
