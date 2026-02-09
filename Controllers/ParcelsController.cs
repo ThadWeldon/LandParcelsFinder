@@ -46,7 +46,7 @@ namespace LandParcelFinder.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ParcelNumber,Address,County,SizeInAcres,Price,HasWetlands,Status,Notes")] Parcel parcel)
+        public async Task<IActionResult> Create([Bind("ParcelNumber,Address,county,SizeInAcres,Price,HasWetLands,Status,notes")] Parcel parcel)
         {
             if(ModelState.IsValid)
             {

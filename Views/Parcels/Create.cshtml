@@ -1,0 +1,93 @@
+@model LandParcelFinder.Models.Parcel
+
+@{
+    ViewData["Title"] = "Add New Parcel";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h2>Add New Parcel</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>         
+                        <div class="mb-3">
+                            <label asp-for="ParcelNumber" class="form-label"></label>
+                            <input asp-for="ParcelNumber" class="form-control" placeholder="e.g., P-2024-006" />
+                            <span asp-validation-for="ParcelNumber" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Address" class="form-label"></label>
+                            <input asp-for="Address" class="form-control" placeholder="e.g., 123 Main Street" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="county" class="form-label"></label>
+                                <select asp-for="county" class="form-select" required>
+                                    <option value="">Select County</option>
+                                    <option value="Fulton">Fulton</option>
+                                    <option value="Gwinnett">Gwinnett</option>
+                                    <option value="Cobb">Cobb</option>
+                                    <option value="Cherokee">Cherokee</option>
+                                    <option value="Forsyth">Forsyth</option>
+                                </select>
+                                <span asp-validation-for="county" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="SizeInAcres" class="form-label"></label>
+                                <input asp-for="SizeInAcres" class="form-control" type="number" step="0.01" />
+                                <span asp-validation-for="SizeInAcres" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Price" class="form-label"></label>
+                                <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Status" class="form-label"></label>
+                                <select asp-for="Status" class="form-select">
+                                    <option value="Available">Available</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Sold">Sold</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-check mt-4">
+                                    <input asp-for="HasWetLands" class="form-check-input" type="checkbox" />
+                                    <label asp-for="HasWetLands" class="form-check-label"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="notes" class="form-label"></label>
+                            <textarea asp-for="notes" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="notes" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Add Parcel</button>
+                            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
