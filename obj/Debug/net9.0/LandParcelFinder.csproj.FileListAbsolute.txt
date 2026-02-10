@@ -437,3 +437,4 @@ C:\Users\thadw\Desktop\Repos\LandParcelsFinder\obj\Debug\net9.0\refint\LandParce
 C:\Users\thadw\Desktop\Repos\LandParcelsFinder\obj\Debug\net9.0\LandParcelFinder.pdb
 C:\Users\thadw\Desktop\Repos\LandParcelsFinder\obj\Debug\net9.0\LandParcelFinder.genruntimeconfig.cache
 C:\Users\thadw\Desktop\Repos\LandParcelsFinder\obj\Debug\net9.0\ref\LandParcelFinder.dll
+C:\Users\thadw\Desktop\Repos\LandParcelsFinder\obj\Debug\net9.0\compressed\lq3nvvd468-oq8efdgpc5.gz

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LandParcelFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+123156c5f0036ab31fc10ebe6d1e36982528e9ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0029e85d28b8eb0edb90f0a34ea98c336f318e83")]
 [assembly: System.Reflection.AssemblyProductAttribute("LandParcelFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LandParcelFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
